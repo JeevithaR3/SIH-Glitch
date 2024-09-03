@@ -7,7 +7,7 @@
       body {
         font-family: Arial, sans-serif;
         background: url("images/grid.jpg");
-        display: flex;
+        display:flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -21,6 +21,7 @@
         padding: 20px;
         width: 90%;
         max-width: 800px;
+        display:inline-block;
         text-align: center;
         overflow-y: auto; /* Allow scrolling if content overflows */
         height: 80vh; /* Set a fixed height for the container */
@@ -35,8 +36,10 @@ h1 {
 
       .question {
         margin-bottom: 15px;
-        text-align: left;
-      }
+        text-align: center;
+
+        
+        }
       .button {
         color: white;
         background: #000080;
@@ -58,20 +61,26 @@ h1 {
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Documents Required</h1>
+        <h1>NOC Application form</h1>
         <form id="quiz-form">
             <div class="question">
+                <p>
+                  1. Name of the applicant
+                </p>
+                <input type="text" id="username" name="username" placeholder="as per your document" required>
+              </div>
+            <div class="question">
               <p>
-                1. Division
+                2.Contact number
               </p>
-              <input type="text" id="username" name="username" placeholder="Enter your division" required>
+              <input type="number" id="username" name="username" placeholder="Number linked to your aadhar" required>
             </div>
 
             <div class="question">
               <p>
-                2. Type of occupancy
+                3. Address
               </p>
-              <input type="text" id="username" name="username" placeholder="Enter the type of occupancy" required>
+              <input type="text" id="username" name="username" placeholder="As per your aadhar card" required>
             </div>
 
             <div class="question">
@@ -189,7 +198,9 @@ h1 {
                           </div>
                           <div class="question">
                             <p>
-                              10.Provision of  Staircase (As per clause 7.11 of UBBL 2016)<div class="question">
+                              10.Provision of  Staircase 
+                              (As per clause 7.11 of UBBL 2016)
+                              <div class="question">
                               </p>
                                 <input type="number" id="username" name="username" placeholder="Follow clause 7.11 of UBBL 2016" required>
                                 
@@ -197,36 +208,15 @@ h1 {
                               </div>
                               <div class="question">
                                 <p>
-                                  10.Protection of exits<div class="question">
-                                  </p>
-                                  <label>
-                                    <input type="radio" name="fruit" value="Pressurization" checked>
-                                    
-                                </label><br>
-                                <label>
-                                    <input type="radio" name="fruit" value="Fire check door">
-                                    
-                                </label><br>
+                                  10.Protection of exits
                                 <div class="question">
-                                    <p>
+                                </p>
+                                <input type="number" id="username" name="username" placeholder="" required>
+                                <p>
                                       10.Smoke Management System
                                       </p>
-                                      <label>
-                                        <input type="radio" name="" value="Fresh air supply" checked>
-                                        
-                                    </label><br>
-                                    <label>
-                                        <input type="radio" name="" value="Exhaust air discharge">
-                                        
-                                    </label><br>
-                                    <label>
-                                        <input type="radio" name="" value="Provision of fresh air cut outs">
-                                        
-                                    </label><br>
-                                    <label>
-                                        <input type="radio" name="" value="Provision of exhaust air cut outs">
-                                    
-                                    </label><br>
+                                      <input type="number" id="username" name="username" placeholder="Mention the installation process" required>
+                                      
                                     
                               
                               
