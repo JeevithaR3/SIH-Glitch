@@ -9,7 +9,7 @@
         background: url("images/grid.jpg");
         display:flex;
         justify-content: center;
-        align-items: center;
+        align-items: center ; 
         height: 100vh;
         margin: 0;
       }
@@ -22,7 +22,7 @@
         width: 90%;
         max-width: 800px;
         display:inline-block;
-        text-align: center;
+        text-align : center;
         overflow-y: auto; /* Allow scrolling if content overflows */
         height: 80vh; /* Set a fixed height for the container */
       }
@@ -36,7 +36,7 @@ h1 {
 
       .question {
         margin-bottom: 15px;
-        text-align: center;
+        text-align: left;
 
         
         }
@@ -61,7 +61,7 @@ h1 {
 </head>
 <body>
     <div class="quiz-container">
-        <h1>NOC Application form</h1>
+        <h1>Inspection form </h1>
         <form id="quiz-form">
             <div class="question">
                 <p>
@@ -140,7 +140,7 @@ h1 {
             </div>
             <div class="question">
                 <p>
-                  10. Gate width
+                  11. Gate width
                 </p>
                 <input type="number" id="username" name="username" placeholder="Gate width" required>
                
@@ -148,7 +148,7 @@ h1 {
               </div>
               <div class="question">
                 <p>
-                  10. Width of Internal road
+                  12. Width of Internal road
                 </p>
                 <input type="number" id="username" name="username" placeholder="Width of internal road" required>
                 
@@ -156,7 +156,7 @@ h1 {
               </div>
               <div class="question">
                 <p>
-                  10. Number of stair cases
+                  13. Number of stair cases
                 </p>
                 <input type="number" id="username" name="username" placeholder="Number of staircases" required>
                 
@@ -164,7 +164,7 @@ h1 {
               </div>
               <div class="question">
                 <p>
-                  10. Width of stair cases
+                  14. Width of stair cases
                 </p>
                 <input type="number" id="username" name="username" placeholder="Width of stair cases" required>
                 
@@ -172,7 +172,7 @@ h1 {
               </div> 
               <div class="question">
                 <p>
-                  10. Width of Internal road<div class="question">
+                  15. Width of Internal road<div class="question">
                   </p>
                     <input type="number" id="username" name="username" placeholder="Width of internal road" required>
                     
@@ -181,7 +181,7 @@ h1 {
 
                   <div class="question">
                     <p>
-                      10. Width of Internal road<div class="question">
+                      16. Width of Internal road<div class="question">
                       </p>
                         <input type="number" id="username" name="username" placeholder="Width of internal road" required>
                         
@@ -190,7 +190,7 @@ h1 {
                       
                       <div class="question">
                         <p>
-                          10.Width of internal road<div class="question">
+                          17.Width of internal road<div class="question">
                           </p>
                             <input type="number" id="username" name="username" placeholder="Width of internal road" required>
                             
@@ -198,7 +198,7 @@ h1 {
                           </div>
                           <div class="question">
                             <p>
-                              10.Provision of  Staircase 
+                              18.Provision of  Staircase 
                               (As per clause 7.11 of UBBL 2016)
                               <div class="question">
                               </p>
@@ -208,16 +208,21 @@ h1 {
                               </div>
                               <div class="question">
                                 <p>
-                                  10.Protection of exits
+                                  19.Protection of exits
                                 <div class="question">
                                 </p>
                                 <input type="number" id="username" name="username" placeholder="" required>
                                 <p>
-                                      10.Smoke Management System
+                                      20.Smoke Management System
                                       </p>
                                       <input type="number" id="username" name="username" placeholder="Mention the installation process" required>
                                       
-                                    
+                                      <div class="question">
+                                        <p>
+                                          21. Fire extinguishers
+                                        </p>
+                                        <input type="number" id="username" name="username" placeholder="Basement floor area" required>
+                                      </div>
                               
                               
                                     
@@ -230,52 +235,10 @@ h1 {
                 
               </div>
 
-            <button class="button" onclick="calculateScore()">Submit</button>
+            
           </form>
-          <div id="result"></div>
-        </div>
-
-        <script>
-          function calculateScore() {
-            const form = document.getElementById("quiz-form");
-            const resultDiv = document.getElementById("result");
-            const questions = form.querySelectorAll(".question");
-            let score = 0;
-
-            // Define correct answers for each question
-            const correctAnswers = {
-              q1: "q1-option2", // ID of the correct answer for question 1
-              q2: "q2-option4", // ID of the correct answer for question 2
-              q3: "q3-option4", // ID of the correct answer for question 3
-              q4: "q4-option4", // ID of the correct answer for question 4
-              q5: "q5-option1", // ID of the correct answer for question 5
-              q6: "q6-option2", // ID of the correct answer for question 6
-              q7: "q7-option2", // ID of the correct answer for question 7
-              q8: "q8-option1", // ID of the correct answer for question 8
-              q9: "q9-option2", // ID of the correct answer for question 9
-              q10: "q10-option1", // ID of the correct answer for question 10
-            };
-
-            // Iterate over each question
-            questions.forEach((question) => {
-              // Get the question name
-              const questionName = question.querySelector(
-                'input[type="radio"]'
-              ).name;
-              // Find the selected radio button for the current question
-              const selectedAnswerId = question.querySelector(
-                'input[type="radio"]:checked'
-              )?.id;
-
-              // Compare selected answer ID with the correct answer ID
-              if (selectedAnswerId === correctAnswers[questionName]) {
-                score++;
-              }
-            });
-
-            resultDiv.textContent = `You scored ${score} out of ${questions.length}.`;
-          }
-        </script>
+          
+        
       </body>
     </html>
   </body>
