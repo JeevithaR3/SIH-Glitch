@@ -77,6 +77,13 @@
             font-size: 14px;
             color: #666;
         }
+        #applicantId, #thankYouMessage {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
         @media (max-width: 600px) {
             .container {
                 padding: 15px;
@@ -90,7 +97,7 @@
 <body>
     <div class="container">
         <h1>No Objection Certificate (NOC) Application</h1>
-        <form action="/submit-noc-application" method="POST" enctype="multipart/form-data">
+        <form id="nocForm" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Name of Applicant</label>
                 <input type="text" id="name" name="name" required>
@@ -120,6 +127,37 @@
                 <button type="submit">Submit Application</button>
             </div>
         </form>
+        <p id="applicantId"></p>
+        <p id="thankYouMessage"></p>
     </div>
+
+    <script>
+        document.getElementById('nocForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Create a FormData object to handle file uploads
+            const formData = new FormData(this);
+
+            // Send form data to the server
+            fetch('/submit-noc-application', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Display the applicant ID and thank you message
+                    document.getElementById('applicantId').textContent = 'Your Applicant ID is: ' + data.applicantId;
+                    document.getElementById('thankYouMessage').textContent = 'Thank you for applying! We will get back to you soon.';
+                } else {
+                    document.getElementById('thankYouMessage').textContent = 'There was an error processing your application. Please try again.';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('thankYouMessage').textContent = 'There was an error processing your application. Please try again.';
+            });
+        });
+    </script>
 </body>
 </html>
