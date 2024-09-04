@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspector Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("images/grid.jpg") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px; /* Add padding to prevent content from touching edges */
+            color: #333;
+            overflow-y: scroll; /* Enable scrolling on the entire page */
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 900px;
+            box-sizing: border-box;
+            text-align: left;
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: rgb(7, 7, 249);
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            font-size: 16px;
+            margin: 0 0 8px 0;
+            font-weight: bold;
+        }
+
+        .question input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inspector Form</h1>
+        <form id="inspector-form">
+            <div class="question">
+                <p>Height of the Building (in meters)</p>
+                <input type="number" id="height" name="height" placeholder="Enter the height of the building" required>
+            </div>
+            <div class="question">
+                <p>Number of Floors</p>
+                <input type="number" id="floors" name="floors" placeholder="Enter the number of floors" required>
+            </div>
+            <div class="question">
+                <p>Covered Area at Ground Floor (in sq meters)</p>
+                <input type="number" id="area-ground" name="area-ground" placeholder="Covered area in sq meters" required>
+            </div>
+            <div class="question">
+                <p>Number of Basements</p>
+                <input type="number" id="basements" name="basements" placeholder="Enter the number of basements" required>
+            </div>
+            <div class="question">
+                <p>Smoke Management System</p>
+                <input type="text" id="smoke-management" name="smoke-management" placeholder="Details of smoke management system" required>
+            </div>
+            <div class="question">
+                <p>Fire Extinguishers</p>
+                <input type="text" id="fire-extinguishers" name="fire-extinguishers" placeholder="Details of fire extinguishers" required>
+            </div>
+            <div class="question">
+                <p>Fire Alarm and Automatic Fire Sensing System</p>
+                <input type="text" id="fire-alarm" name="fire-alarm" placeholder="Details of fire alarm and sensing system" required>
+            </div>
+            <div class="question">
+                <p>Automatic Sprinkler System</p>
+                <input type="text" id="sprinkler-system" name="sprinkler-system" placeholder="Details of automatic sprinkler system" required>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
