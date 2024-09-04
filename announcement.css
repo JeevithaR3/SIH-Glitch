@@ -1,0 +1,132 @@
+/* Announcement Section Styles */
+.announcements {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .announcements h2 {
+    font-size: 24px;
+    margin-top: 0;
+    color: #333;
+    transition:0.5s;
+    
+  }
+  .announcements h2:hover {
+    font-size: 28px;
+    margin-top: 0;
+    color: red;
+    
+    
+  }
+
+  
+  .announcements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .announcements li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    transition:0.5s;
+  }
+  .announcements li:hover{
+padding-top:20px;
+padding-bottom:20px;
+
+  }
+  
+  .announcements li:last-child {
+    border-bottom: none;
+  }
+  
+  .announcements h3 {
+    font-size: 18px;
+    margin-top: 0;
+    color: #666;
+  }
+  
+  .announcements p {
+    font-size: 16px;
+    color: #999;
+  }
+  
+  .read-more {
+    font-size: 16px;
+    color: #337ab7;
+    text-decoration: none;
+    border-bottom: 1px solid #337ab7;
+  }
+  
+  .read-more:hover {
+    color: #23527c;
+    border-bottom: 1px solid #23527c;
+  }
+  .next{
+
+    display:flex;
+    overflow:hidden;
+    width:95%;
+    margin:auto;
+    margin-left:30px;
+    padding-top:50px;
+   
+  }
+  .announcements{
+    margin-right:0px;
+    flex-basis:30%;
+    background-color: lightyellow;
+    ;
+  }
+  .about{
+    display:block;
+    margin-left:80px;
+   width:100%;
+    font-size:20px;
+    margin-right:3px;
+    line-height:27px;
+    text-align:center;
+    padding-bottom:20px;
+  }
+  .about img{
+    width:120%;
+  }
+  .firestation
+  {background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("images/delhi_fire_service.png");
+    background-position:center;
+    margin:auto;
+    width:95%;
+    background-size:cover;
+    padding-top:20px;
+    padding:50px 0;
+    text-align:center;
+    border-radius:3px;
+    margin-top:40px;
+    transition:1s;
+  }
+  .firestation:hover
+    {background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("images/delhi_fire_service.png");
+        background-position:center;
+        margin:auto;
+        width:95%;
+        background-size:cover;
+        padding-top:20px;
+        padding:80px 0;
+        text-align:center;
+        border-radius:3px;
+        margin-top:40px;
+      
+  }
+  .firestation h3{
+    color:transparent;
+transition:0.5s;}
+ .firestation:hover h3{
+    color:white;
+    line-height:22px;
+    text-align:center;
+ }
