@@ -61,7 +61,7 @@ h1 {
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Inspection form </h1>
+        <h1>NOC Inspection form</h1>
         <form id="quiz-form">
             <div class="question">
                 <p>
@@ -73,21 +73,21 @@ h1 {
               <p>
                 2.Contact number
               </p>
-              <input type="number" id="username" name="username" placeholder="Number linked to your aadhar" required>
+              <input type="number" id="Contact" name="Contact" placeholder="Number linked to your aadhar" required>
             </div>
 
             <div class="question">
               <p>
                 3. Address
               </p>
-              <input type="text" id="username" name="username" placeholder="As per your aadhar card" required>
+              <input type="text" id="address" name="address" placeholder="As per your aadhar card" required>
             </div>
 
             <div class="question">
               <p>
                 3.Height of the building in meteres
               </p>
-              <input type="number" id="username" name="username" placeholder="Enter the height of the building" required>
+              <input type="number" id="height" name="height" placeholder="Enter the height of the building" required>
              
             </div>
 
@@ -95,114 +95,25 @@ h1 {
               <p>
                 4. Number of floors
               </p>
-              <input type="number" id="username" name="username" placeholder="Enter the number of floors" required>
+              <input type="number" id="floors" name="floors" placeholder="Enter the number of floors" required>
 
             <div class="question">
               <p>5. Covered area at ground floor</p>
-              <input type="number" id="username" name="username" placeholder="Covered area in sq mts" required>
+              <input type="number" id="area-ground" name="area-ground" placeholder="Covered area in sq mts" required>
             </div>
 
-            <div class="question">
-              <p>
-                6. Typical floor area
-              </p> 
-              <input type="number" id="username" name="username" placeholder="floor area in sq mts" required>
-            </div>
+            
 
-            <div class="question">
-              <p>
-                7. Number of basements
-              </p>
-              <input type="number" id="username" name="username" placeholder="Enter the number of basements" required>
-            </div>
-
-            <div class="question">
-              <p>
-                8. Basement floor area
-              </p>
-              <input type="number" id="username" name="username" placeholder="Basement floor area" required>
-            </div>
-
-            <div class="question">
-              <p>
-                9. Total covered area on all floor (including stilt and basements) 
-              </p>
-              <input type="number" id="username" name="username" placeholder="Total covered area" required>
-            </div>
-
-            <div class="question">
-              <p>
-                10. Road width
-              </p>
-              <input type="number" id="username" name="username" placeholder="Road width" required>
-           
-              
-            </div>
-            <div class="question">
-                <p>
-                  11. Gate width
-                </p>
-                <input type="number" id="username" name="username" placeholder="Gate width" required>
-               
-                
-              </div>
-              <div class="question">
-                <p>
-                  12. Width of Internal road
-                </p>
-                <input type="number" id="username" name="username" placeholder="Width of internal road" required>
-                
-                
-              </div>
-              <div class="question">
-                <p>
-                  13. Number of stair cases
-                </p>
-                <input type="number" id="username" name="username" placeholder="Number of staircases" required>
-                
-                
-              </div>
-              <div class="question">
-                <p>
-                  14. Width of stair cases
-                </p>
-                <input type="number" id="username" name="username" placeholder="Width of stair cases" required>
-                
-                
-              </div> 
-              <div class="question">
-                <p>
-                  15. Width of Internal road<div class="question">
-                  </p>
-                    <input type="number" id="username" name="username" placeholder="Width of internal road" required>
-                    
-                    
-                  </div>
-
-                  <div class="question">
-                    <p>
-                      16. Width of Internal road<div class="question">
-                      </p>
-                        <input type="number" id="username" name="username" placeholder="Width of internal road" required>
-                        
-                        
-                      </div>
+                 
                       
-                      <div class="question">
-                        <p>
-                          17.Width of internal road<div class="question">
-                          </p>
-                            <input type="number" id="username" name="username" placeholder="Width of internal road" required>
-                            
-                            
-                          </div>
+                      
                           <div class="question">
                             <p>
                               18.Provision of  Staircase 
                               (As per clause 7.11 of UBBL 2016)
                               <div class="question">
                               </p>
-                                <input type="number" id="username" name="username" placeholder="Follow clause 7.11 of UBBL 2016" required>
+                                <input type="number" id="provision-staircase" name="username" placeholder="Follow clause 7.11 of UBBL 2016" required>
                                 
                                 
                               </div>
@@ -211,34 +122,61 @@ h1 {
                                   19.Protection of exits
                                 <div class="question">
                                 </p>
-                                <input type="number" id="username" name="username" placeholder="" required>
+                                <input type="number" id="exit" name="username" placeholder="" required>
                                 <p>
                                       20.Smoke Management System
                                       </p>
-                                      <input type="number" id="username" name="username" placeholder="Mention the installation process" required>
-                                      
-                                      <div class="question">
-                                        <p>
-                                          21. Fire extinguishers
-                                        </p>
-                                        <input type="number" id="username" name="username" placeholder="Basement floor area" required>
-                                      </div>
-                              
-                              
-                                    
-                                  
-                                    
-                            
-                          
-    
-                
-                
+                                      <input type="number" id="smaoke" name="username" placeholder="Mention the installation process" required>
+                    
               </div>
 
-            
+            <button class="button" onclick="calculateScore()" value="Save to csv">Submit</button>
           </form>
-          
-        
+          <div id="result"></div>
+        </div>
+        <script src="form.js"></script>
+        <script>
+
+          function calculateScore() {
+            const form = document.getElementById("quiz-form");
+            const resultDiv = document.getElementById("result");
+            const questions = form.querySelectorAll(".question");
+            let score = 0;
+
+            // Define correct answers for each question
+            const correctAnswers = {
+              q1: "q1-option2", // ID of the correct answer for question 1
+              q2: "q2-option4", // ID of the correct answer for question 2
+              q3: "q3-option4", // ID of the correct answer for question 3
+              q4: "q4-option4", // ID of the correct answer for question 4
+              q5: "q5-option1", // ID of the correct answer for question 5
+              q6: "q6-option2", // ID of the correct answer for question 6
+              q7: "q7-option2", // ID of the correct answer for question 7
+              q8: "q8-option1", // ID of the correct answer for question 8
+              q9: "q9-option2", // ID of the correct answer for question 9
+              q10: "q10-option1", // ID of the correct answer for question 10
+            };
+
+            // Iterate over each question
+            questions.forEach((question) => {
+              // Get the question name
+              const questionName = question.querySelector(
+                'input[type="radio"]'
+              ).name;
+              // Find the selected radio button for the current question
+              const selectedAnswerId = question.querySelector(
+                'input[type="radio"]:checked'
+              )?.id;
+
+              // Compare selected answer ID with the correct answer ID
+              if (selectedAnswerId === correctAnswers[questionName]) {
+                score++;
+              }
+            });
+
+            resultDiv.textContent = `You scored ${score} out of ${questions.length}.`;
+          }
+        </script>
       </body>
     </html>
   </body>
