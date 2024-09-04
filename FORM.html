@@ -9,7 +9,7 @@
         background: url("images/grid.jpg");
         display:flex;
         justify-content: center;
-        align-items: center;
+        align-items: center ; 
         height: 100vh;
         margin: 0;
       }
@@ -22,7 +22,7 @@
         width: 90%;
         max-width: 800px;
         display:inline-block;
-        text-align: center;
+        text-align : center;
         overflow-y: auto; /* Allow scrolling if content overflows */
         height: 80vh; /* Set a fixed height for the container */
       }
@@ -36,7 +36,7 @@ h1 {
 
       .question {
         margin-bottom: 15px;
-        text-align: center;
+        text-align: left;
 
         
         }
@@ -127,7 +127,30 @@ h1 {
             
 
                  
-                     
+                      
+                      
+                          <div class="question">
+                            <p>
+                              18.Provision of  Staircase 
+                              (As per clause 7.11 of UBBL 2016)
+                              <div class="question">
+                              </p>
+                                <input type="number" id="provision-staircase" name="username" placeholder="Follow clause 7.11 of UBBL 2016" required>
+                                
+                                
+                              </div>
+                              <div class="question">
+                                <p>
+                                  19.Protection of exits
+                                <div class="question">
+                                </p>
+                                <input type="number" id="exit" name="username" placeholder="" required>
+                                <p>
+                                      20.Smoke Management System
+                                      </p>
+                                      <input type="number" id="smaoke" name="username" placeholder="Mention the installation process" required>
+                    
+              </div>
 
            <a href=""><button class="button" onclick="calculateScore()" value="Save to csv">Submit</button></a> 
           </form>
